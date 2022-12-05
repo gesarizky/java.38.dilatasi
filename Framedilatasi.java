@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /*
@@ -42,6 +44,7 @@ public class Framedilatasi extends javax.swing.JFrame {
         outx = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         outy = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -53,32 +56,50 @@ public class Framedilatasi extends javax.swing.JFrame {
         jLabel2.setText("Kalkulator Perbesaran (Dilatasi) terhadap sumbu (0,0) ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Isikan titik A(x,y) dan skala (k) ");
+        jLabel3.setText("Isi titik A(x,y) dan skala (k) ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("x =*");
 
+        inx.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inxActionPerformed(evt);
+            }
+        });
+        inx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inxKeyTyped(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Y =*");
 
+        iny.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         iny.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inyActionPerformed(evt);
+            }
+        });
+        iny.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inyKeyTyped(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("K =*");
 
+        ink.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inkActionPerformed(evt);
+            }
+        });
+        ink.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inkKeyTyped(evt);
             }
         });
 
@@ -89,11 +110,13 @@ public class Framedilatasi extends javax.swing.JFrame {
         jLabel8.setText("X =*");
 
         outx.setEditable(false);
+        outx.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Y =*");
 
         outy.setEditable(false);
+        outy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,44 +124,45 @@ public class Framedilatasi extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addGap(18, 18, 18)
+                            .addComponent(ink))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(18, 18, 18)
+                            .addComponent(iny))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(18, 18, 18)
+                            .addComponent(inx))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel7)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(ink))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(iny))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inx))
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(outx, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(outx, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(outy, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(outy, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -174,8 +198,10 @@ public class Framedilatasi extends javax.swing.JFrame {
     private void inxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inxActionPerformed
         // TODO add your handling code here:
         if (inx.getText().equals("") || iny.getText().equals("") || ink.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksx = inx.getText();
             double inputx = Double.parseDouble(teksx);
             String teksy = iny.getText();
@@ -184,9 +210,9 @@ public class Framedilatasi extends javax.swing.JFrame {
             double inputk = Double.parseDouble(teksk);
             double hasilx = inputx * inputk;
             double hasily = inputy * inputk;
-            String outputx = String.valueOf(hasilx);
+            String outputx = df.format(hasilx);
             outx.setText(outputx);
-            String outputy = String.valueOf(hasily);
+            String outputy = df.format(hasily);
             outy.setText(outputy);
         }
     }//GEN-LAST:event_inxActionPerformed
@@ -194,8 +220,10 @@ public class Framedilatasi extends javax.swing.JFrame {
     private void inyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inyActionPerformed
         // TODO add your handling code here:
         if (inx.getText().equals("") || iny.getText().equals("") || ink.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksx = inx.getText();
             double inputx = Double.parseDouble(teksx);
             String teksy = iny.getText();
@@ -204,9 +232,9 @@ public class Framedilatasi extends javax.swing.JFrame {
             double inputk = Double.parseDouble(teksk);
             double hasilx = inputx * inputk;
             double hasily = inputy * inputk;
-            String outputx = String.valueOf(hasilx);
+            String outputx = df.format(hasilx);
             outx.setText(outputx);
-            String outputy = String.valueOf(hasily);
+            String outputy = df.format(hasily);
             outy.setText(outputy);
         }
     }//GEN-LAST:event_inyActionPerformed
@@ -214,8 +242,10 @@ public class Framedilatasi extends javax.swing.JFrame {
     private void inkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inkActionPerformed
         // TODO add your handling code here:
         if (inx.getText().equals("") || iny.getText().equals("") || ink.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksx = inx.getText();
             double inputx = Double.parseDouble(teksx);
             String teksy = iny.getText();
@@ -224,12 +254,36 @@ public class Framedilatasi extends javax.swing.JFrame {
             double inputk = Double.parseDouble(teksk);
             double hasilx = inputx * inputk;
             double hasily = inputy * inputk;
-            String outputx = String.valueOf(hasilx);
+            String outputx = df.format(hasilx);
             outx.setText(outputx);
-            String outputy = String.valueOf(hasily);
+            String outputy = df.format(hasily);
             outy.setText(outputy);
         }
     }//GEN-LAST:event_inkActionPerformed
+
+    private void inxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inxKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inxKeyTyped
+
+    private void inyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inyKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inyKeyTyped
+
+    private void inkKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inkKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inkKeyTyped
 
     /**
      * @param args the command line arguments
@@ -279,6 +333,7 @@ public class Framedilatasi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField outx;
     private javax.swing.JTextField outy;
     // End of variables declaration//GEN-END:variables
